@@ -1,0 +1,15 @@
+%h1 Upload New Print
+
+= form_tag prints_path do
+
+  = label :print, :uin, 'UIN'
+  %br
+  = text_field :print, 'uin'
+  %br
+  %br
+  = text_field nil, 'file'
+  %button
+    browse
+  %br
+  %br
+  = submit_tag 'Upload'
