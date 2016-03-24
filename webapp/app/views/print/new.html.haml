@@ -10,12 +10,10 @@
 
   = label :print, :uin, 'UIN'
   %br
-  = text_field :print, 'uin'
+  = text_field :print, :uin
   %br
   %br
-  = text_field nil, 'file'
-  %button
-    browse
+  = file_field :print, :filename
   %br
   %br
   = submit_tag 'Upload'

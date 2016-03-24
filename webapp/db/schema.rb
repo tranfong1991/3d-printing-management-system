@@ -11,23 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160323221733) do
+ActiveRecord::Schema.define(version: 20160324161513) do
 
   create_table "prints", force: :cascade do |t|
     t.string   "uin"
     t.integer  "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "uploads", force: :cascade do |t|
-    t.string   "uin"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.string   "gcode_file_name"
-    t.string   "gcode_content_type"
-    t.integer  "gcode_file_size"
-    t.datetime "gcode_updated_at"
+    t.string   "filename"
   end
 
 end
