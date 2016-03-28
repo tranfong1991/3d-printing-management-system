@@ -6,15 +6,15 @@ class PrintController < ApplicationController
 
   def upload
 
-    @student = Student.find_by(uin: params[:print][:uin])
-    if !@student.nil? # If student is in database
+    @student = Student.find_by(uin: params[:print][:uin]) # Get student from databse
+    if !@student.nil? # If student exists
       @print = Print.create!(print_params)
       flash[:success] = "Uploaded #{@print.filename} for #{@student.name}: #{@print.uin}"
-    else # If student is NOT in database
+    else # If student does NOT exist
       flash[:danger] = "You are not authorized to print"
     end
 
-    redirect_to prints_path
+    redirect_to new_print_path
   end
 
   private

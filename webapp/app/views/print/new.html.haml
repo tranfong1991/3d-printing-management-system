@@ -6,7 +6,7 @@
 
 %h1 Upload New Print
 
-= form_tag prints_path do
+= form_tag print_path do
 
   = label :print, :uin, 'UIN'
   %br
@@ -17,3 +17,7 @@
   %br
   %br
   = submit_tag 'Upload'
+
+%br
+%br
+%a{ :href => new_student_path } Add new student
