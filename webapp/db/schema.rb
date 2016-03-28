@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20160325183719) do
 
+  create_table "prints", force: :cascade do |t|
+    t.string   "uin"
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "filename"
+  end
+
   create_table "students", force: :cascade do |t|
     t.string   "uin"
     t.string   "name"

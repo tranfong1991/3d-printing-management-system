@@ -1,0 +1,19 @@
+- flash.each do |key, value|
+  .alert{ :class => "alert-#{key}" }
+    %button.close{ :data => { :dismiss => "alert" } } x
+    %strong
+      = value
+
+%h1 Upload New Print
+
+= form_tag prints_path do
+
+  = label :print, :uin, 'UIN'
+  %br
+  = text_field :print, :uin
+  %br
+  %br
+  = file_field :print, :filename
+  %br
+  %br
+  = submit_tag 'Upload'
