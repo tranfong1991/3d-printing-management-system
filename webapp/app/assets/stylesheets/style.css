@@ -1,0 +1,14 @@
+body{
+    background-color: #910C2D;
+}
+
+#login_button{
+    text-align: center;
+}
+
+#form_wrapper{
+    position:absolute;
+    top:45%;
+    left:45%;
+    text-align: center;
+}
