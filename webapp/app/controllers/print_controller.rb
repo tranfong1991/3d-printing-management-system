@@ -5,8 +5,8 @@ class PrintController < ApplicationController
   end
 
   def upload
-    @print = Print.create!(print_params)
     # TODO: Logic for checking if student exists in database
+    @print = Print.create!(print_params)
     flash[:success] = "Uploaded #{@print.filename} for UIN: #{@print.uin}"
     # flash[:success] = "You are authorized to print" # If student is in database
     # flash[:danger] = "You are not authorized to print" # If student is NOT in database
