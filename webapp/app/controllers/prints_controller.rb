@@ -1,4 +1,4 @@
-class PrintController < ApplicationController
+class PrintsController < ApplicationController
 
   def new
 
