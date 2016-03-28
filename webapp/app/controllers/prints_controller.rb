@@ -5,11 +5,15 @@ class PrintController < ApplicationController
   end
 
   def upload
-    # TODO: Logic for checking if student exists in database
-    @print = Print.create!(print_params)
-    flash[:success] = "Uploaded #{@print.filename} for UIN: #{@print.uin}"
-    # flash[:success] = "You are authorized to print" # If student is in database
-    # flash[:danger] = "You are not authorized to print" # If student is NOT in database
+
+    @student = Student.find_by(uin: params[:print][:uin])
+    if !@student.nil? # If student is in database
+      @print = Print.create!(print_params)
+      flash[:success] = "Uploaded #{@print.filename} for #{@student.name}: #{@print.uin}"
+    else # If student is NOT in database
+      flash[:danger] = "You are not authorized to print"
+    end
+
     redirect_to prints_path
   end
 
