@@ -1,0 +1,109 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/helpers/accounts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/helpers/layouts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/helpers/print_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/helpers/students_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/controllers/prints_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/controllers/admins_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/controllers/layouts_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/controllers/students_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/models/admin.rb": [
+        0,
+        0
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/models/print.rb": [
+        0,
+        0
+      ],
+      "/Users/Gaby/Documents/Code/3d-printing-management-system/webapp/app/models/student.rb": [
+        0,
+        0
+      ]
+    },
+    "timestamp": 1459284330
+  }
+}
