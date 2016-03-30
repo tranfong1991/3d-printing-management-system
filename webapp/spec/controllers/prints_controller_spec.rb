@@ -11,6 +11,11 @@ describe PrintsController, :type => :controller do
       { :get => new_print_path(1) }.
       should route_to(:controller => "prints", :action => "new", :format => "1")
     end
+
+    it "renders the upload student view" do
+      { :get => student_path(1) }.
+      should route_to(:controller => "prints", :action => "upload", :format => "1")
+    end
   end
 end    
     

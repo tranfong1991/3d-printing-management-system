@@ -1,5 +1,5 @@
-Given /the following prints eist/ do |prints_table|
-  prints_table.hashes.each do |prints|
-    Prints.create!(prints)
+Given /the following prints eist/ do |table|
+  table.hashes.each do |student|
+    Students.create!(student)
   end
 end
