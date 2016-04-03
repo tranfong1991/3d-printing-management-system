@@ -1,8 +1,28 @@
 class AdminsController < ApplicationController
+    before_action :require_admin, only: [:index, :show]
+    
     def index
-        @admin = Admin.find(1)
-        if @admin.username == params[:Username] && @admin.password == params[:Password]
-            redirect_to new_account_path
+        
+    end
+    
+    def new
+        @admin = Admin.new
+    end
+    
+    def create
+        @admin = Admin.new(admin_params)
+        if @admin.save
+            session[:admin_id] = @admin.id
+            redirect_to "/admins"
+        else
+            redirect_to "/signup"
         end
     end
+    
+private
+
+    def admin_params
+        params.require(:admin).permit(:first_name, :last_name, :username, :password)
+    end
+    
 end

@@ -2,7 +2,6 @@ class PrintsController < ApplicationController
 
   def new
 
-
   end
 
   def upload
@@ -18,7 +17,7 @@ class PrintsController < ApplicationController
     redirect_to new_print_path
   end
 
-  private
+private
 
   def print_params
     params.require(:print).permit(:uin, :status, :filename)
