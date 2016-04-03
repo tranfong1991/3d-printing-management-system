@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+    before_action :require_admin, only: [:index, :new]
+    
     def index
         @students = Student.all
     end
