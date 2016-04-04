@@ -5,9 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-
-admins = [{:username=>'shane989',:password=>'abc123',:category=>1}]
-
-admins.each do |movie|
-    Admin.create!(movie)
-end
