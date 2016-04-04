@@ -7,16 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <% if current_admin %> 
-    <ul> 
-      <li><%= current_admin.username %></li> 
-      <li><%= link_to "Log out", logout_path, method: "delete" %></li> 
-    </ul> 
-  <% else %> 
-    <ul> 
-      <li><%= link_to "Login as Admin", 'login' %></a></li> 
-      <li><%= link_to "Signup", 'signup' %></a></li> 
-    </ul> 
+  <% if current_admin %>
+    <ul>
+      <li><%= current_admin.username %></li>
+      <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+    </ul>
+  <% else %>
+    <ul>
+      <li><%= link_to "Login as Admin", login_path %></a></li>
+      <li><%= link_to "Signup", signup_path %></a></li>
+    </ul>
   <% end %>
 
 <%= yield %>

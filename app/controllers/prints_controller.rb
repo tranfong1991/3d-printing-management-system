@@ -1,4 +1,5 @@
 class PrintsController < ApplicationController
+  before_action :require_admin, only: [:queue]
 
   # GET /prints
   def new
@@ -20,6 +21,22 @@ class PrintsController < ApplicationController
   # GET /prints/queue
   def queue
     @prints = Print.all
+  end
+
+  # POST /prints/update_status
+  # Should be strictly used by async javascript calls
+  def update_status
+    new_status = params[:status]
+    id = params[:id]
+    queued_print = Print.find(id)
+    queued_print.status = new_status
+    respond_to do |format|
+      if queued_print.save
+        format.js { render :nothing => true }
+      else
+        format.js { render :nothing => false }
+      end
+    end
   end
 
   private

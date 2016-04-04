@@ -6,9 +6,15 @@
       %th UIN
       %th Filename
       %th Uploaded at
+      %th Status
+      %th Start Print
   %tbody
     - @prints.each do |print|
       %tr
         %td= print.uin
         %td= print.filename
         %td= print.created_at
+        %td{ :id => "status_#{print.id}" }= print.status
+        %td
+          - if print.status == "pending"
+            %button{ :id => "status_btn_#{print.id}", :onclick => "update_status(#{print.id})" } Start Print

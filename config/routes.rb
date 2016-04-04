@@ -9,7 +9,6 @@ Rails.application.routes.draw do
 
   get 'prints' => 'prints#new'
   post 'prints' => 'prints#upload'
-  get 'prints/queue' => 'prints#queue'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
@@ -22,10 +21,14 @@ Rails.application.routes.draw do
   resources :students
 
   get "signup" => "admins#new"
+
   resources :admins
 
   get 'prints' => 'prints#new'
   post 'prints' => 'prints#upload'
+  get 'prints/queue' => 'prints#queue'
+  post 'prints/update_status' => 'prints#update_status'
+
   resources :prints
 
   get 'login' => 'sessions#new'
