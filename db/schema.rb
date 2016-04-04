@@ -15,10 +15,12 @@ ActiveRecord::Schema.define(version: 20160404195553) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username"
-    t.string   "password"
+    t.string   "password_digest"
     t.integer  "category"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "prints", force: :cascade do |t|
