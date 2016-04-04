@@ -1,0 +1,14 @@
+%h1 Print queue
+
+%table.table
+  %thead
+    %tr
+      %th UIN
+      %th Filename
+      %th Uploaded at
+  %tbody
+    - @prints.each do |print|
+      %tr
+        %td= print.uin
+        %td= print.filename
+        %td= print.created_at
