@@ -1,3 +1,3 @@
 class Print < ActiveRecord::Base
-  enum status: [:pending, :started, :failed, :aborted, :declined, :completed]
+  enum status: [:pending, :started, :aborted, :declined, :canceled, :completed]
 end
