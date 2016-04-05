@@ -20,7 +20,7 @@ class PrintsController < ApplicationController
 
   # GET /prints/queue
   def queue
-    @prints = Print.all
+    @prints = Print.where("status < 3") # Don't get aborted/canceled or rejected prints
   end
 
   # POST /prints/update_status
