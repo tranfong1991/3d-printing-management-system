@@ -3,7 +3,11 @@ require 'spec_helper'
 describe StudentsController, :type => :controller do
   before (:each) do
       session[:admin_id] = "1"
-    end
+  end
+
+  before(:each) do
+    @student = Student.new :uin => "123456789", :name => "Rev", :email => "rev@tamu.edu"
+  end
 
   describe 'views' do
     before(:each) do
