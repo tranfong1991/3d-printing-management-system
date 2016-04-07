@@ -7,15 +7,14 @@ describe PrintsController, :type => :controller do
       expect(response).to render_template("new")
     end
 
-    it "renders the new student view" do
-      { :get => new_print_path(1) }.
-      should route_to(:controller => "prints", :action => "new", :format => "1")
+    it "renders the queue view" do
+      get :queue
+      expect(response).to render_template("queue")
     end
 
-    it "renders the upload student view" do
-      { :get => student_path(1) }.
-      should route_to(:controller => "prints", :action => "upload", :format => "1")
-    end
+    # it "should have the title '3d Printing Management'" do
+    #   visit '/prints'
+    #   page.should have_selector("title", text: "3d Printing Management", visible: false)
+    # end
   end
-end    
-    
+end
