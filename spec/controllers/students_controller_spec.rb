@@ -1,24 +1,19 @@
 require 'spec_helper'
 
 describe StudentsController, :type => :controller do
-  describe 'views' do
-    before(:each) do
-      @student = Student.new :uin => "123456789", :name => "Rafa", :email => "rafa@rafa.com"
+  before (:each) do
+      session[:admin_id] = "1"
     end
 
-    before (:each) do
-      session[:user_id] = "1"
+  describe 'views' do
+    before(:each) do
+      @student = Student.new :uin => "123456789", :name => "Rev", :email => "rev@tamu.edu"
     end
 
     it "renders the index template" do
       get :index
       expect(response).to render_template("index")
     end
-
-    # it "should have the right title" do
-    #   get :index
-    #   response.should have_selector("title", :text => "3d Printing Management")
-    # end
   end
 
   describe 'student controllers' do

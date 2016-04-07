@@ -1,13 +1,24 @@
 require 'spec_helper'
 
 describe AdminsController, :type => :controller do
+  before (:each) do
+    session[:admin_id] = "1"
+  end
+  
   describe 'templates' do
-    before (:each) do
-      session[:username] = "troll"
-      session[:password_digest] = "lol"
+    it "returns http success" do
+      if session[:username].present?
+        get :create
+        expect(response).to have_http_status(:success)
+      else
+        @a=Admin.create :username => "rafa", :first_name => "rafa", :last_name => "moreno", :password => "rafa"
+        current_user = @a
+        get :create
+        expect(response).to have_http_status(:redirect)
+      end
     end
 
-    it "renders the index template" do
+    it "renders the admin template" do
       get :index
       expect(response).to render_template("index")
     end
