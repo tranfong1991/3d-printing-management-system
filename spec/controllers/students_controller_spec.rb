@@ -1,15 +1,20 @@
 require 'spec_helper'
 
 describe StudentsController, :type => :controller do
-  before (:each) do
-      session[:admin_id] = "1"
-  end
+  # before (:each) do
+  #     session[:admin_id] = "1"
+  # end
 
-  before(:each) do
-    @student = Student.new :uin => "123456789", :name => "Rev", :email => "rev@tamu.edu"
-  end
+  # before(:each) do
+  #   @student = Student.new :uin => "123456789", :name => "Rev", :email => "rev@tamu.edu"
+  # end
 
   describe 'views' do
+
+    before (:each) do
+        session[:admin_id] = "1"
+    end
+
     before(:each) do
       @student = Student.new :uin => "123456789", :name => "Rev", :email => "rev@tamu.edu"
     end
@@ -21,6 +26,10 @@ describe StudentsController, :type => :controller do
   end
 
   describe 'student controllers' do
+    before (:each) do
+      session[:admin_id] = "1"
+    end
+
     it "should create new student" do
       Student.stub(:new).and_return(double(Student))
       post :new

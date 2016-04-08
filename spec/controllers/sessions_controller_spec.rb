@@ -23,4 +23,12 @@ describe SessionsController, :type => :controller do
 	      )
 	    end
 	end
+
+	describe "login fail" do
+	    it "sends a warning to user" do
+	      get :create, username: "blank"      
+	      expect(response).to redirect_to(login_path)
+	      expect(flash[:danger]).to be_present
+	    end
+	end
 end
