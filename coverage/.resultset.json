@@ -38,7 +38,7 @@
         null,
         null,
         1,
-        0,
+        1,
         0,
         0,
         0,
@@ -50,7 +50,7 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null
@@ -83,7 +83,7 @@
         null,
         null,
         1,
-        0,
+        1,
         0,
         0,
         0,
@@ -95,15 +95,15 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         null,
         null,
         1,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
         0,
         0,
         0,
@@ -128,7 +128,7 @@
         null,
         null,
         1,
-        0,
+        1,
         0,
         0,
         0,
@@ -149,11 +149,11 @@
         1,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
-        0,
+        1,
         null,
         null,
         1,
@@ -178,6 +178,11 @@
         1,
         null
       ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/print.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/student.rb": [
         1,
         null
@@ -187,13 +192,8 @@
         0,
         0,
         0
-      ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/print.rb": [
-        0,
-        0,
-        0
       ]
     },
-    "timestamp": 1460001569
+    "timestamp": 1460127675
   }
 }
