@@ -1,5 +1,5 @@
 class PrintsController < ApplicationController
-  before_action :require_admin, only: [:queue]
+  before_action :require_admin, only: [:queue, :show]
 
   # GET /prints
   def new
@@ -21,6 +21,10 @@ class PrintsController < ApplicationController
   # GET /prints/queue
   def queue
     @prints = Print.where("status < 3") # Don't get aborted/canceled or rejected prints
+  end
+  
+  def show
+    @prints = Print.where(:uin => params[:id]).order('status DESC, created_at DESC')
   end
 
   # POST /prints/update_status

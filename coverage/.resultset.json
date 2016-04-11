@@ -1,74 +1,161 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/helpers/accounts_helper.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/accounts_helper.rb": [
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/helpers/application_helper.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/helpers/layouts_helper.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/layouts_helper.rb": [
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/helpers/print_helper.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/print_helper.rb": [
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/helpers/students_helper.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/sessions_helper.rb": [
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/controllers/admins_controller.rb": [
-        1,
-        1,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/students_helper.rb": [
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/controllers/prints_controller.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/admins_controller.rb": [
+        1,
         1,
         null,
         1,
         null,
         null,
         null,
-        null,
         1,
-        null,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        null,
-        0,
+        1,
         null,
         null,
         1,
-        null,
         1,
         0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
         null,
         null,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/controllers/students_controller.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/application_controller.rb": [
         1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        4,
+        null,
+        null,
+        1,
+        4,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/prints_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/students_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
         1,
         1,
         null,
@@ -76,6 +163,10 @@
         1,
         0,
         0,
+        0,
+        null,
+        0,
+        null,
         0,
         null,
         null,
@@ -86,25 +177,228 @@
         null,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/models/admin.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/admin.rb": [
+        1,
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/models/student.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/print.rb": [
+        1,
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/controllers/layouts_controller.rb": [
-        0,
-        0,
-        0,
-        0
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/student.rb": [
+        1,
+        null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/webapp/app/models/print.rb": [
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/layouts_controller.rb": [
+        0,
+        0,
         0,
         0
       ]
     },
-    "timestamp": 1459308729
+    "timestamp": 1460413529
+  },
+  "Cucumber Features": {
+    "coverage": {
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/sessions_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        4,
+        4,
+        0,
+        0,
+        null,
+        4,
+        4,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/application_controller.rb": [
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        18,
+        null,
+        null,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/accounts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/layouts_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/print_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/sessions_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/helpers/students_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/admin.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/prints_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        2,
+        2,
+        0,
+        0,
+        null,
+        2,
+        null,
+        2,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/students_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/admins_controller.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/student.rb": [
+        1,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/layouts_controller.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/print.rb": [
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1460413459
   }
 }
