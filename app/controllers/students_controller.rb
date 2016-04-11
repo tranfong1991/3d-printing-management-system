@@ -22,6 +22,6 @@ class StudentsController < ApplicationController
 private
     # Strong Parameters 
     def user_params
-        params.require(:student).permit(:name, :uin, :email)
+        params.require(:student).permit(:name, :uin, :email, :note)
     end
 end

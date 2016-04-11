@@ -4,6 +4,7 @@ class CreateStudents < ActiveRecord::Migration
       t.string :uin
       t.string :name
       t.string :email
+      t.string :note
 
       t.timestamps null: false
     end

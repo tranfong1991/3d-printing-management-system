@@ -3,6 +3,7 @@ class CreatePrints < ActiveRecord::Migration
     create_table :prints do |t|
       t.string :uin
       t.integer :status
+      t.string :note
 
       t.timestamps null: false
     end
