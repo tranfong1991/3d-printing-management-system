@@ -6,10 +6,11 @@ Feature: Upload a print
 
 Scenario: When an authorized UIN is entered, a user can upload
 
-  Given I am on the Prints page
+  Given I am an admin or technician
+  And I am on the Prints page
   And I fill UIN with "123456789"
   And I click "Upload"
-  Then I should have a success message
+  Then I should have a success
   And I should remain on the Prints page
 
 Scenario: When an unauthorized UIN is entered, a user cannot upload

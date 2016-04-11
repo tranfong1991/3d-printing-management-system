@@ -9,6 +9,10 @@ When(/^I click on "([^"]*)"$/) do |arg1|
   click_button(arg1)
 end
 
+Given(/^I click the link "([^"]*)"$/) do |arg1|
+  click_link(arg1)
+end
+
 When(/^I fill username with "([^"]*)"$/) do |arg1|
   fill_in('Username', :with => arg1)
 end
@@ -21,12 +25,12 @@ Then(/^I should have a warning$/) do
   expect(find('.alert-danger'))
 end
 
-Then(/^I should have a success message$/) do
+Then(/^I should have a success$/) do
   expect(find('.alert-success'))
 end
 
 Then(/^I should remain on the Prints page$/) do
-  visit path_to(prints_path)
+  visit prints_path
 end
 
 When(/^I fill UIN with "([^"]*)"$/) do |arg1|
@@ -50,7 +54,7 @@ Given(/^I fill Name with "([^"]*)"$/) do |arg1|
 end
 
 Given(/^I fill Email with "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+  fill_in('Email', :with => arg1)
 end
 
 Given(/^I am on the login page$/) do
@@ -67,5 +71,8 @@ end
 
 Given(/^I click "([^"]*)"$/) do |arg1|
   click_button(arg1)
-
 end
+
+# Given(/^I fill filename with "([^"]*)"$/) do |arg1|
+#   fill_in('print_filename', :with => arg1)
+# end
