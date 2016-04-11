@@ -13,14 +13,14 @@ class PrintsController < ApplicationController
       @print = Print.create!(print_params)
       flash[:success] = "Uploaded #{@print.filename} for #{@student.name}: #{@print.uin}"
     else # If student does NOT exist
-      flash[:danger] = "You are not authorized to print"
+      flash[:danger] = 'You are not authorized to print'
     end
     redirect_to new_print_path
   end
 
   # GET /prints/queue
   def queue
-    @prints = Print.where("status < 3") # Don't get aborted/canceled or rejected prints
+    @prints = Print.where('status < 3') # Don't get aborted/canceled or rejected prints
   end
   
   def show
