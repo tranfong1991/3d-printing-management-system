@@ -4,19 +4,19 @@ Feature: Login to Application
   So I can login to application
   I want to go to enter a correct username and password combination
 
-Scenario: When correct login information is entered, a user logs in successfully
+Scenario: When correct login information is entered, an admin logs in successfully
 
   Given I am on the login page
   When I fill username with "jeff"
-  And I fill Password with "huang"
-  And I press "Login"
-  Then I should be on the Admin home page
+  And I fill password with "jeff"
+  And I click on "Log in"
+  Then I should be on the admin home page
 
-Scenario: When incorrect login information is entered, a user cannot log in
+Scenario: When incorrect login information is entered, an admin cannot log in
 
   Given I am on the login page
-  When I fill Email Address with "jefff"
-  And I fill Password with "huang"
-  And I press "Login"
+  When I fill username with "jeff"
+  And I fill password with "jefff"
+  And I click on "Log in"
   Then I should have a warning
   And I should be on the login page

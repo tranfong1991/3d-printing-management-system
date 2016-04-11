@@ -8,21 +8,16 @@ Scenario: When Add new student link is clicked, new student page is rendered
 
   Given I am an admin or technician
   And I am on the Prints page
-  When I click on "Add new student"
+  And I click on "Add"
   Then I should be on the New student page
 
 Scenario: When information is inputted into new student fields, and they are saved, then a new student is created
 
   Given I am an admin or technician
   And I am on the Add New Student page
-  When student information is inputted
-  And I press "Add"
-  Then a new student is created
-
-Scenario: When add button is saved, students page is rendered
-
-  Given I am an admin or technician
-  And I am on the Add New Student page
-  When student information is inputted
-  And I press "Add"
-  Then I should be on the Students page
+  And I fill UIN with "123456"
+  And I fill Name with "Rafa"
+  And I fill Email with "rafa@tamu.edu"
+  And I click "Add"
+  Then I should have a success message
+  Then I should be on the New student page
