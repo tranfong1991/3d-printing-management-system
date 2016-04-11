@@ -24,7 +24,7 @@ class PrintsController < ApplicationController
   end
   
   def show
-    @prints = Print.where(:uin => params[:id])
+    @prints = Print.where(:uin => params[:id]).order('status DESC, created_at DESC')
   end
 
   # POST /prints/update_status

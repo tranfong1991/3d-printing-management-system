@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
             session[:admin_id] = @admin.id
             redirect_to '/admins'
         else
-            flash[:danger] = "Incorrect username or password!"
+            flash[:danger] = "Incorrect username or password! Please try again."
             redirect_to '/login'
         end 
     end
