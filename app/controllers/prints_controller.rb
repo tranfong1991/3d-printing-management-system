@@ -46,7 +46,7 @@ class PrintsController < ApplicationController
   private
 
   def print_params
-    params.require(:print).permit(:uin, :status, :filename)
+    params.require(:print).permit(:uin, :status, :filename, :note)
   end
 
 end

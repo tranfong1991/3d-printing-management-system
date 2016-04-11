@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20160406193807) do
   create_table "prints", force: :cascade do |t|
     t.string   "uin"
     t.integer  "status",     default: 0
+    t.string   "note"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
     t.string   "filename"
@@ -35,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160406193807) do
     t.string   "uin"
     t.string   "name"
     t.string   "email"
+    t.string   "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
