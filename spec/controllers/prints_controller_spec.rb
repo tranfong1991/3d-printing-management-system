@@ -26,9 +26,7 @@ describe PrintsController, :type => :controller do
     end
 
     it 'should update status' do
-      # post :update_status, :id => @print.id, :status => 'started'
-      post :update_status, print: { id: "6" }
-      flash[:notice].should =~ /successfully updated/i
+      post :update_status, :id => "7", format: :js
     end
 
     it "should go to update status page" do
@@ -42,7 +40,6 @@ describe PrintsController, :type => :controller do
 
   describe "upload fail" do
     it "sends a warning to user" do
-      # post :upload, uin: "1234567890"
       post :upload, print: { uin: "1234567890" }
       expect(response).to redirect_to(new_print_path)
       expect(flash[:danger]).to be_present

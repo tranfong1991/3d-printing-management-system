@@ -19,7 +19,7 @@ describe StudentsController, :type => :controller do
       @student = Student.new :uin => "123456789", :name => "Rev", :email => "rev@tamu.edu"
     end
 
-    it "renders the index template" do
+    it "renders the student index template" do
       get :index
       expect(response).to render_template("index")
     end

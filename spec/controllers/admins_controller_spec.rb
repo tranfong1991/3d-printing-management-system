@@ -19,7 +19,7 @@ describe AdminsController, :type => :controller do
       end
     end
 
-    it "renders the admin template" do
+    it "renders the admin index template" do
       get :index
       expect(response).to render_template("index")
     end
