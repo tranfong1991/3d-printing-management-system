@@ -108,10 +108,10 @@
         1,
         1,
         1,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        2,
         null,
         0,
         null,
@@ -177,6 +177,10 @@
         null,
         null
       ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/student.rb": [
+        1,
+        null
+      ],
       "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/admin.rb": [
         1,
         1,
@@ -187,10 +191,6 @@
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/student.rb": [
-        1,
-        null
-      ],
       "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/layouts_controller.rb": [
         0,
         0,
@@ -198,7 +198,7 @@
         0
       ]
     },
-    "timestamp": 1460430552
+    "timestamp": 1460477593
   },
   "Cucumber Features": {
     "coverage": {
@@ -233,11 +233,11 @@
         1,
         null,
         1,
-        35,
+        34,
         null,
         null,
         1,
-        6,
+        5,
         null,
         null
       ],
@@ -399,6 +399,6 @@
         0
       ]
     },
-    "timestamp": 1460430567
+    "timestamp": 1460477579
   }
 }

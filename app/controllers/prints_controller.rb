@@ -11,7 +11,7 @@ class PrintsController < ApplicationController
     @student = Student.find_by(uin: params[:print][:uin]) # Get student from databse
     if !@student.nil? # If student exists
       @print = Print.create!(print_params)
-      flash[:success] = "Uploaded #{@print.filename} for #{@student.name}: #{@print.uin}"
+      flash[:success] = "Uploaded #{@print.filename} for #{@student.name}: #{@print.uin}, with the following note - #{@print.note}"
     else # If student does NOT exist
       flash[:danger] = "You are not authorized to print"
     end

@@ -10,4 +10,4 @@ Scenario: When an admin is logged in, the admin can change the status
   And I am on the Queue page
   And I click "Start Print"
   Then I should have a popup
-  And I should remain on the Queue page
+  And I should be on the Queue page

@@ -7,6 +7,6 @@ Feature: Logout to Application
 Scenario: When logout is clicked, an admin is taken to prints page
 
   Given I am an admin or technician
-  And I am on the Admins page
+  And I am on the Login page
   And I click the link "Log out"
-  Then I should be on the logout page
+  Then I should be on the Logout page

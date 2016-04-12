@@ -11,7 +11,7 @@ Scenario: When an authorized UIN is entered, a user can upload
   And I fill UIN with "123456789"
   And I click "Upload"
   Then I should have a success
-  And I should remain on the Prints page
+  And I should be on the Prints page
 
 Scenario: When an unauthorized UIN is entered, a user cannot upload
 
@@ -20,4 +20,4 @@ Scenario: When an unauthorized UIN is entered, a user cannot upload
   And I fill UIN with "12345678910"
   And I click "Upload"
   Then I should have a warning
-  And I should remain on the Prints page
+  And I should be on the Prints page

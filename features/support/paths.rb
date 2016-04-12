@@ -19,6 +19,16 @@ module NavigationHelpers
       '/prints'
     when /^the new students page$/
       '/students/new'
+    when /^the Login page$/
+    '/login'
+    when /^the Prints page$/
+    '/prints'
+    when /^the Add New Student page$/
+    '/students/new'
+    when /^the Admin home page$/
+    '/admins'
+    when /^the Queue page$/
+    '/prints/queue'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
