@@ -1,0 +1,17 @@
+%h1 Upload New Print
+
+= form_tag prints_path do
+
+  = label :print, :uin, 'UIN'
+  %br
+  = text_field :print, :uin
+  %br
+  %br
+  = file_field :print, :filename
+  %br
+  
+  = text_field :print, :note
+  %br
+  = submit_tag 'Upload'
+  
+= link_to 'Add new student', new_student_path

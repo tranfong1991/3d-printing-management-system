@@ -1,0 +1,26 @@
+%h1 Print queue
+
+%table.table
+  %thead
+    %tr
+      %th UIN
+      %th Filename
+      %th Uploaded at
+      %th Status
+      %th Start Print
+  %tbody
+    - @prints.each do |print|
+      %tr{ :id => "print_#{print.id}" }
+        %td= print.uin
+        %td= print.filename
+        %td= print.created_at
+        %td{ :id => "status_#{print.id}" }= print.status
+        %td{ :id => "status_btn_#{print.id}"}
+          - if print.status == "pending"
+            %button{ :id => "start_btn_#{print.id}", :onclick => "update_status(#{print.id}, 'started')" } Start Print
+          - if print.status == "started"
+            %button{ :id => "finish_btn_#{print.id}", :onclick => "update_status(#{print.id}, 'completed')" } Complete
+            %button{ :id => "abort_btn_#{print.id}", :onclick => "update_status(#{print.id}, 'aborted')" } Abort
+          - if print.status == "aborted"
+            %button{ :id => "cancel_btn_#{print.id}", :onclick => "update_status(#{print.id}, 'canceled')" } Cancel
+            %button{ :id => "start_btn_#{print.id}", :onclick => "update_status(#{print.id}, 'started')" } Restart
