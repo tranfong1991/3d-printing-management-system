@@ -69,8 +69,28 @@ Then(/^I should be on the login page$/) do
   visit login_path
 end
 
+Then(/^I should be on the logout page$/) do
+  visit logout_path
+end
+
 Given(/^I click "([^"]*)"$/) do |arg1|
   click_button(arg1)
+end
+
+Then(/^I should be on the Prints page$/) do
+  visit prints_path
+end
+
+Given(/^I am on the Queue page$/) do
+  visit prints_queue_path
+end
+
+Then(/^I should remain on the Queue page$/) do
+  visit prints_queue_path
+end
+
+Given(/^I am on the Admins page$/) do
+  visit "/admins"
 end
 
 # Given(/^I fill filename with "([^"]*)"$/) do |arg1|

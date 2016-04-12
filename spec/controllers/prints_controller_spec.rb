@@ -18,7 +18,7 @@ describe PrintsController, :type => :controller do
 
   describe 'status' do
     before(:each) do
-      @print = Print.new :uin => "098765432", :filename => "whet.txt", :created_at => "2016-04-07 16:30:49.754220", :updated_at => nil
+      @print = Print.new :uin => "123456789", :filename => "test.txt", :created_at => "2016-04-11 23:00:25 UTC", :updated_at => nil
     end
     
     before (:each) do
@@ -26,7 +26,8 @@ describe PrintsController, :type => :controller do
     end
 
     it 'should update status' do
-      post :update_status, :id => @print.id, :status => 'started'
+      # post :update_status, :id => @print.id, :status => 'started'
+      post :update_status, print: { id: "6" }
       flash[:notice].should =~ /successfully updated/i
     end
 
@@ -41,7 +42,8 @@ describe PrintsController, :type => :controller do
 
   describe "upload fail" do
     it "sends a warning to user" do
-      post :upload, uin: "1234567890"      
+      # post :upload, uin: "1234567890"
+      post :upload, print: { uin: "1234567890" }
       expect(response).to redirect_to(new_print_path)
       expect(flash[:danger]).to be_present
     end

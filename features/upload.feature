@@ -15,7 +15,8 @@ Scenario: When an authorized UIN is entered, a user can upload
 
 Scenario: When an unauthorized UIN is entered, a user cannot upload
 
-  Given I am on the Prints page
+  Given I am an admin or technician
+  And I am on the Prints page
   And I fill UIN with "12345678910"
   And I click "Upload"
   Then I should have a warning
