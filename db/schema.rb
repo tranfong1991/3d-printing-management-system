@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160406193807) do
+ActiveRecord::Schema.define(version: 20160413223415) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "username"
@@ -25,10 +25,15 @@ ActiveRecord::Schema.define(version: 20160406193807) do
 
   create_table "prints", force: :cascade do |t|
     t.string   "uin"
-    t.integer  "status",     default: 0
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.integer  "status",            default: 0
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "filename"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.string   "url"
   end
 
   create_table "students", force: :cascade do |t|

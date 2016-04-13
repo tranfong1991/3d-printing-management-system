@@ -1,15 +1,15 @@
 %h1 Upload New Print
 
-= form_tag prints_path do
+= form_for @print, :html => {:multipart => true}  do |f|
 
-  = label :print, :uin, 'UIN'
+  = f.label :uin, 'UIN'
   %br
-  = text_field :print, :uin
-  %br
-  %br
-  = file_field :print, :filename
+  = f.text_field :uin
   %br
   %br
-  = submit_tag 'Upload'
+  = f.file_field :file
+  %br
+  %br
+  = f.submit 'Upload'
   
 = link_to 'Add new student', new_student_path
