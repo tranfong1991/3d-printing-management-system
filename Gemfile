@@ -20,6 +20,9 @@ gem 'haml'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# AWS gem to access S3 storage
+gem 'aws-sdk', '~> 2'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

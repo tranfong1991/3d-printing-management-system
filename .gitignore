@@ -16,4 +16,7 @@
 !/log/.keep
 /tmp
 
+# Ignore RubyMine settings folder
+/.idea/
+
 /spring-1000/*

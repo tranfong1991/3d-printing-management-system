@@ -6,6 +6,7 @@
       %th UIN
       %th Filename
       %th Uploaded at
+      %th Link
       %th Status
       %th Start Print
   %tbody
@@ -14,6 +15,8 @@
         %td= print.uin
         %td= print.filename
         %td= print.created_at
+        %td
+          %a{:download => "", :href => print.url} Download
         %td{ :id => "status_#{print.id}" }= print.status
         %td{ :id => "status_btn_#{print.id}"}
           - if print.status == "pending"
