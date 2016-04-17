@@ -26,7 +26,7 @@ describe PrintsController, :type => :controller do
     end
 
     it 'should update status' do
-      post :update_status, :id => "7", format: :js
+      post :update_status, :id => "1", format: :js
     end
 
     it "should go to update status page" do

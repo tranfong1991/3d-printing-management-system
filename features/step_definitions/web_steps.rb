@@ -1,3 +1,9 @@
+Given /the following students exist/ do |students_table| 
+  students_table.hashes.each do |student| 
+    Student.create!(student) 
+  end 
+end 
+
 Given(/^I am an admin or technician$/) do
   visit login_path
   fill_in('Username', :with => "jeff")

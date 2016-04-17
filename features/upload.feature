@@ -4,6 +4,14 @@ Feature: Upload a print
   So I can upload a print
   I want to go to a print page and upload my print
 
+Background: students in database    
+
+    Given the following students exist: 
+
+      | uin       | name  | email | note |
+
+      | 123456789 | hello | world | test |
+
 Scenario: When an authorized UIN is entered, a user can upload
 
   Given I am an admin or technician
