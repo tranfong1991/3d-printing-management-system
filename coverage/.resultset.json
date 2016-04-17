@@ -78,6 +78,7 @@
         null,
         null,
         1,
+        1,
         null,
         null,
         null,
@@ -88,7 +89,27 @@
         0,
         0,
         null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
         1,
+        null,
         null,
         1,
         null,
@@ -188,7 +209,9 @@
       ],
       "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/print.rb": [
         1,
+        null,
         1,
+        null,
         null
       ],
       "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/layouts_controller.rb": [
@@ -198,7 +221,7 @@
         0
       ]
     },
-    "timestamp": 1460874243
+    "timestamp": 1460874857
   },
   "Cucumber Features": {
     "coverage": {
@@ -233,7 +256,7 @@
         1,
         null,
         1,
-        35,
+        33,
         null,
         null,
         1,
@@ -276,6 +299,7 @@
         null,
         null,
         1,
+        5,
         null,
         null,
         null,
@@ -287,8 +311,28 @@
         1,
         null,
         1,
+        1,
+        1,
         null,
-        2,
+        null,
+        null,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        null,
+        1,
+        null,
+        null,
+        1,
         null,
         null,
         null,
@@ -319,8 +363,15 @@
         1,
         null,
         1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/print.rb": [
         1,
         null,
+        1,
         null,
         null
       ],
@@ -387,11 +438,6 @@
         1,
         null
       ],
-      "/Users/santossolorzano/GitHub/3d-printing-management-system/app/models/print.rb": [
-        1,
-        1,
-        null
-      ],
       "/Users/santossolorzano/GitHub/3d-printing-management-system/app/controllers/layouts_controller.rb": [
         0,
         0,
@@ -399,6 +445,6 @@
         0
       ]
     },
-    "timestamp": 1460874253
+    "timestamp": 1460874849
   }
 }
