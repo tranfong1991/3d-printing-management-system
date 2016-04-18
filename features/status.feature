@@ -4,6 +4,14 @@ Feature: Change status of print
   So I can change the status of a print
   I want to go to a print queue page and change the status of prints
 
+Background: admins in database    
+
+    Given the following admins exist: 
+
+      | username | password | first_name | last_name |
+
+      | jeff     | jeff     | jeff       | jeff      |
+
 Scenario: When an admin is logged in, the admin can change the status
 
   Given I am an admin or technician

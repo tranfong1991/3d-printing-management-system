@@ -4,15 +4,23 @@ Given /the following students exist/ do |students_table|
   end 
 end 
 
+Given /the following admins exist/ do |admins_table| 
+  admins_table.hashes.each do |admin| 
+    Admin.create!(admin) 
+  end 
+end 
+
 Given(/^I am an admin or technician$/) do
   visit login_path
   fill_in('Username', :with => "jeff")
   fill_in('Password', :with => "jeff")
   click_button("Log in")
+  visit prints_path
 end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
+  puts page.body
 end
 
 Then(/^I should be on the Add New Student page$/) do
@@ -20,7 +28,7 @@ Then(/^I should be on the Add New Student page$/) do
 end
 
 Then(/^I should be on the Admin home page$/) do
-  visit "/admins"
+  visit admins_path
 end
 
 Then(/^I should be on the Login page$/) do
@@ -68,12 +76,19 @@ When(/^I fill password with "([^"]*)"$/) do |arg1|
 end
 
 When(/^I fill UIN with "([^"]*)"$/) do |arg1|
-  fill_in('UIN', :with => arg1)
-  #fill_in "UIN", with: arg1, visible: false
+  fill_in("UIN", :with => arg1)
 end
 
 Given(/^I fill Name with "([^"]*)"$/) do |arg1|
   fill_in('First name', :with => arg1)
+end
+
+Given(/^I fill First name with "([^"]*)"$/) do |arg1|
+  fill_in('First name', :with => arg1)
+end
+
+Given(/^I fill Last name with "([^"]*)"$/) do |arg1|
+  fill_in('Last name', :with => arg1)
 end
 
 Given(/^I fill Email with "([^"]*)"$/) do |arg1|
@@ -83,7 +98,3 @@ end
 Given(/^I click "([^"]*)"$/) do |arg1|
   click_button(arg1)
 end
-
-# Given(/^I fill filename with "([^"]*)"$/) do |arg1|
-#   fill_in('print_filename', :with => arg1)
-# end
