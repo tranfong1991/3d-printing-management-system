@@ -1,3 +1,9 @@
+Given /the following prints exist/ do |prints_table| 
+  prints_table.hashes.each do |print| 
+    Print.create!(print) 
+  end
+end 
+
 Given /the following students exist/ do |students_table| 
   students_table.hashes.each do |student| 
     Student.create!(student) 
@@ -20,7 +26,7 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
-  puts page.body
+  puts page.body # super important - much wow
 end
 
 Then(/^I should be on the Add New Student page$/) do
@@ -65,6 +71,12 @@ end
 
 Given(/^I click the link "([^"]*)"$/) do |arg1|
   click_link(arg1)
+end
+
+Given(/^I click the table link "([^"]*)"$/) do |arg1|
+  find('tr', text: download).click_link(arg1)
+  puts page.body # super important - much wow
+  #all('a').each { |a| a[:href] }
 end
 
 When(/^I fill username with "([^"]*)"$/) do |arg1|
