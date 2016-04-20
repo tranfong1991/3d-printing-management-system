@@ -9,7 +9,8 @@ describe AdminsController, :type => :controller do
     it "returns http success" do
       if session[:admin_id].present?
         get :create
-        expect(response).to have_http_status(:success)
+        expect(response).to render_template("index")
+        #expect(response).to have_http_status(:success)
       else
         @a=Admin.create :username => "rafa", :first_name => "rafa", :last_name => "moreno", :password => "rafa"
         current_user = @a

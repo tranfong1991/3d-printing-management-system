@@ -23,6 +23,20 @@ describe StudentsController, :type => :controller do
       get :index
       expect(response).to render_template("index")
     end
+
+    it "renders the student index template" do
+      get :index
+      expect(response).to render_template("index")
+    end
+  end
+
+  describe 'students index' do 
+    it "should go to students page" do
+      {:get => students_path}.should route_to(
+        :controller => "students",
+        :action => "index"
+      )
+    end
   end
 
   describe 'student controllers' do

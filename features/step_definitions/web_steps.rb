@@ -26,7 +26,7 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
-  puts page.body # super important - much wow
+  #puts page.body # super important - much wow
 end
 
 Then(/^I should be on the Add New Student page$/) do
@@ -62,7 +62,8 @@ Then(/^I should have a success$/) do
 end
 
 Then(/^I should have a popup$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+  page.driver.browser.switch_to.alert.accept
+  #page.driver.browser.switch_to.alert.dismiss
 end
 
 When(/^I click on "([^"]*)"$/) do |arg1|

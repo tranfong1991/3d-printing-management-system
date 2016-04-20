@@ -24,6 +24,7 @@ Background: admins in database
 
       | 123456789 | started |   2016-04-11 22:48:27 UTC | test.txt |
 
+@javascript
 Scenario: When an admin is logged in, the admin can change the status
 
   Given I am an admin or technician
