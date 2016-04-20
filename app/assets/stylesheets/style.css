@@ -1,5 +1,5 @@
 body{
-    background-color: #910C2D;
+    background-color: #C1E1A6;
 }
 
 #login_button{
@@ -11,4 +11,8 @@ body{
     top:45%;
     left:45%;
     text-align: center;
+}
+
+#printForm{
+    top: 50%;
 }

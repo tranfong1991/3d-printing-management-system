@@ -1,17 +1,37 @@
-%h1 Upload New Print
-
-= form_tag prints_path do
-
-  = label :print, :uin, 'UIN'
-  %br
-  = text_field :print, :uin
-  %br
-  %br
-  = file_field :print, :filename
-  %br
+//%h1 {:id => "Title", :style => 'text-align:center;'}
+:css
+  .header{
+    font-weight: bold;
+    text-align: center;
+  }
+  .title{
+    font-weight: bold;
+    font-size: 75px;
+    text-align: center;
+  }
+  .center_wrapper{
+    text-align: center;
+  }
   
-  = text_field :print, :note
-  %br
-  = submit_tag 'Upload'
+  .fileInput{
+    text-align:center;
+  }
   
-= link_to 'Add new student', new_student_path
+%h1.title EIC 3D Printing Queue
+  
+%h1.header Upload New Print
+.center_wrapper
+  = form_tag prints_path do
+  
+    = label :print, :uin, 'UIN'
+    %br
+    = text_field :print, :uin
+    %br
+    = file_field :print, :filename
+    %br
+    
+    = text_field :print, :note
+    %br
+    = submit_tag 'Upload'
+    %br
+    = link_to 'Add new student', new_student_path
