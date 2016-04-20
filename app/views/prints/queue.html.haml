@@ -8,6 +8,7 @@
       %th Uploaded at
       %th Link
       %th Status
+      %th Extension
       %th Start Print
   %tbody
     - @prints.each do |print|
@@ -18,6 +19,7 @@
         %td
           %a{:download => "", :href => print.url} Download
         %td{ :id => "status_#{print.id}" }= print.status
+        %td= print.extension
         %td{ :id => "status_btn_#{print.id}"}
           - if print.status == "pending"
             %button{ :id => "start_btn_#{print.id}", :onclick => "update_status(#{print.id}, 'started')" } Start Print
