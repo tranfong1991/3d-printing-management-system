@@ -1,36 +1,21 @@
-:css
-  .header{
-    font-weight: bold;
-    text-align: center;
-  }
-  .title{
-    font-weight: bold;
-    font-size: 75px;
-    text-align: center;
-  }
-  .center_wrapper{
-    text-align: center;
-  }
-  
-  .fileInput{
-    text-align:center;
-  }
-%h1 Upload New Print
-
-= form_for @print, :html => {:multipart => true}  do |f|
-
-  = f.label :uin, 'UIN'
-  %br
-  = f.text_field :uin
-  %br
-  %br
-  = f.file_field :file
-  %br
-  %br
-  = f.label :note, 'Note'
-  %br
-  = f.text_field :note
-  %br
-  = f.submit 'Upload'
-  %br
-  = link_to 'Add new student', new_student_path
+%script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous")
+%script(src="netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css")
+.center_wrapper
+  %h1 Upload New Print
+  = form_for @print, :html => {:multipart => true}  do |f|
+   
+    = f.label :uin, 'UIN'
+    %br
+    = f.text_field :uin
+    %br
+    %br
+    %div(align="middle")= f.file_field :file
+    %br
+    %br
+    = f.label :note, 'Note'
+    %br
+    = f.text_field :note
+    %br
+    = f.submit 'Upload'
+    %br
+    = link_to 'Add new student', new_student_path

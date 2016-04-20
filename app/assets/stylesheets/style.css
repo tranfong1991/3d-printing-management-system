@@ -16,3 +16,22 @@ body{
 #printForm{
     top: 50%;
 }
+.header{
+font-weight: bold;
+text-align: center;
+}
+.title{
+font-weight: bold;
+font-size: 75px;
+text-align: center;
+}
+.center_wrapper{
+text-align: center;
+}
+.fileInput{
+text-align:center;
+}
+.navbar-custom {
+  background-color: #59aab6;
+  border-color: #cecda0;
+}
