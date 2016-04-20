@@ -5,6 +5,10 @@ describe PrintsController, :type => :controller do
     session[:admin_id] = "1"
   end
 
+  before (:each) do
+      session[:print_id] = "1"
+    end
+
   # jeff 1
   # andy 19
   # bob 20
@@ -13,12 +17,20 @@ describe PrintsController, :type => :controller do
     it "renders the new view" do
       get :new
       expect(response).to render_template("new")
-    end    
+    end 
+
+    it "should go to show page" do
+      {:get => print_path}.should route_to(
+        :controller => "prints",
+        :id => 1,
+        :action => "show" # missing required keys: [:id]
+      )
+    end   
   end
 
   describe 'status' do
     before(:each) do
-      @print = Print.new :uin => "098765432", :filename => "whet.txt", :created_at => "2016-04-07 16:30:49.754220", :updated_at => nil
+      @print = Print.new :uin => "123456789", :filename => "test.txt", :created_at => "2016-04-11 23:00:25 UTC", :updated_at => nil
     end
     
     before (:each) do
@@ -26,8 +38,7 @@ describe PrintsController, :type => :controller do
     end
 
     it 'should update status' do
-      post :update_status, :id => @print.id, :status => 'started'
-      flash[:notice].should =~ /successfully updated/i
+      post :update_status, :id => "1", format: :js
     end
 
     it "should go to update status page" do
@@ -41,7 +52,7 @@ describe PrintsController, :type => :controller do
 
   describe "upload fail" do
     it "sends a warning to user" do
-      post :upload, uin: "1234567890"      
+      post :upload, print: { uin: "1234567890" }
       expect(response).to redirect_to(new_print_path)
       expect(flash[:danger]).to be_present
     end

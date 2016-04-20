@@ -19,9 +19,23 @@ describe StudentsController, :type => :controller do
       @student = Student.new :uin => "123456789", :name => "Rev", :email => "rev@tamu.edu"
     end
 
-    it "renders the index template" do
+    it "renders the student index template" do
       get :index
       expect(response).to render_template("index")
+    end
+
+    it "renders the student index template" do
+      get :index
+      expect(response).to render_template("index")
+    end
+  end
+
+  describe 'students index' do 
+    it "should go to students page" do
+      {:get => students_path}.should route_to(
+        :controller => "students",
+        :action => "index"
+      )
     end
   end
 

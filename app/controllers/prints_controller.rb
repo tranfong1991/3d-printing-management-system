@@ -3,24 +3,45 @@ class PrintsController < ApplicationController
 
   # GET /prints
   def new
+    @print = Print.new
     # Direct to index
   end
 
   # POST /prints
   def upload
-    @student = Student.find_by(uin: params[:print][:uin]) # Get student from databse
+    @student = Student.find_by(uin: params[:print][:uin]) # Get student from database
     if !@student.nil? # If student exists
-      @print = Print.create!(print_params)
+      uploaded_file = params[:print][:file]
+      datetime = Time.now.strftime("%m-%d-%y_%H:%M:%S")
+
+      @print = Print.new do |p|
+        p.uin = params[:print][:uin]
+        p.filename = uploaded_file.original_filename
+      end
+
+      # Get instance
+      s3 = Aws::S3::Resource.new(region: 'us-west-2')
+      # Get bucket
+      bucket = s3.bucket('3d-prints')
+      obj = bucket.object("#{@print.uin}_#{datetime}_#{@print.filename}")
+      # Upload file
+      obj.put(body: uploaded_file)
+
+      @print.url = obj.public_url
+
+      @print.save
+
       flash[:success] = "Uploaded #{@print.filename} for #{@student.name}: #{@print.uin}"
     else # If student does NOT exist
-      flash[:danger] = "You are not authorized to print"
+      flash[:danger] = 'You are not authorized to print'
     end
+
     redirect_to new_print_path
   end
 
   # GET /prints/queue
   def queue
-    @prints = Print.where("status < 3") # Don't get aborted/canceled or rejected prints
+    @prints = Print.where('status < 3') # Don't get aborted/canceled or rejected prints
   end
   
   def show

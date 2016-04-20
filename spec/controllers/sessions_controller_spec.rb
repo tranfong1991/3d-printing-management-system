@@ -6,6 +6,12 @@ require 'spec_helper'
 # end
 
 describe SessionsController, :type => :controller do
+
+	# before(:each) do
+ #      @admin = Admin.new
+ #      @admin.username = "jefff"
+ #    end
+
 	describe "login" do 
 		it "should go to login page" do
 	      {:get => login_path}.should route_to(
@@ -26,7 +32,7 @@ describe SessionsController, :type => :controller do
 
 	describe "login fail" do
 	    it "sends a warning to user" do
-	      get :create, username: "blank"      
+	      post :create, session: { username: "lulz", password: "password" }
 	      expect(response).to redirect_to(login_path)
 	      expect(flash[:danger]).to be_present
 	    end

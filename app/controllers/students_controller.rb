@@ -12,7 +12,7 @@ class StudentsController < ApplicationController
     def create
         @student = Student.new(user_params)
         if @student.save
-            flash[:success] = "#{@student.uin}, #{@student.name}, #{@student.email} was successfully created."
+            flash[:success] = "#{@student.uin}, #{@student.first_name}, #{@student.last_name}, #{@student.email} was successfully created."
         else
             flash[:danger] = "Failed to add new student"
         end
