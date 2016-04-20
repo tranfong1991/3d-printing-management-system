@@ -16,7 +16,7 @@ class PrintsController < ApplicationController
 
       @print = Print.new do |p|
         p.uin = params[:print][:uin]
-        p.filename = uploaded_file.original_filename
+        p.filename = File.basename(uploaded_file.original_filename, ".*")
       end
 
       # Get instance
@@ -28,6 +28,7 @@ class PrintsController < ApplicationController
       obj.put(body: uploaded_file)
 
       @print.url = obj.public_url
+      @print.extension = File.extname(uploaded_file.original_filename)
 
       @print.save
 
@@ -46,6 +47,10 @@ class PrintsController < ApplicationController
   
   def show
     @prints = Print.where(:uin => params[:id]).order('status DESC, created_at DESC')
+  end
+  
+  def detail
+    @print = Print.where(:filename => params[:id])
   end
 
   # POST /prints/update_status
