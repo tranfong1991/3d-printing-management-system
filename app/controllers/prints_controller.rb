@@ -46,11 +46,11 @@ class PrintsController < ApplicationController
   end
   
   def show
-    @prints = Print.where(:uin => params[:id]).order('status DESC, created_at DESC')
+    @prints = Print.where(:uin => params[:uin]).order('status DESC, created_at DESC')
   end
   
   def detail
-    @print = Print.where(:filename => params[:id])
+    @print = Print.find_by(:filename => params[:filename])
   end
 
   # POST /prints/update_status

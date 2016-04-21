@@ -25,8 +25,8 @@ Rails.application.routes.draw do
   post 'prints' => 'prints#upload'
   get 'prints/queue' => 'prints#queue'
   post 'prints/update_status' => 'prints#update_status'
-  get 'prints/show/:id' => 'prints#show'
-  get 'prints/detail/:id' => 'prints#detail'
+  get 'prints/show/:uin' => 'prints#show'
+  get 'prints/detail/:filename' => 'prints#detail'
 
   resources :prints
 
