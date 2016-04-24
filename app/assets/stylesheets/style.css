@@ -1,5 +1,9 @@
 body{
-    background-color: #C1E1A6;
+    background-color: #5b6073;
+}
+
+h1{
+    font-family: "caslon"
 }
 
 #login_button{
@@ -12,9 +16,13 @@ body{
     left:45%;
     text-align: center;
 }
-
 #printForm{
     top: 50%;
+}
+li{
+        display:inline-block;
+        margin-right:10px;
+        float:right;
 }
 .header{
 font-weight: bold;
