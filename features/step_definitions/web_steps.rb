@@ -1,3 +1,5 @@
+# http://stackoverflow.com/questions/24267462/how-to-use-capybara-upload-file
+
 Given /the following prints exist/ do |prints_table| 
   prints_table.hashes.each do |print| 
     Print.create!(print) 
@@ -70,6 +72,10 @@ When(/^I click on "([^"]*)"$/) do |arg1|
   click_button(arg1)
 end
 
+Given(/^I should be on the Students page$/) do
+  visit students_path
+end
+
 Given(/^I click the link "([^"]*)"$/) do |arg1|
   click_link(arg1)
 end
@@ -110,4 +116,8 @@ end
 
 Given(/^I click "([^"]*)"$/) do |arg1|
   click_button(arg1)
+end
+
+Given(/^I attach file$/) do
+  attach_file('print_file', File.absolute_path('./test.txt'))
 end

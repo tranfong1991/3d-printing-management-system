@@ -25,10 +25,14 @@ module NavigationHelpers
     '/prints'
     when /^the Add New Student page$/
     '/students/new'
+    when /^the Students page$/
+    '/students'
     when /^the Admin home page$/
     '/admins'
     when /^the Queue page$/
     '/prints/queue'
+    when /^the Signup page$/
+    '/signup'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
