@@ -20,10 +20,10 @@ function update_status(id, status) {
   });
 }
 
-function cancel_print(id, status){
-   $.post("/prints/update_status.js", {id: id, status: status}, function(){
+function cancel_print(id){
+   $.post("/prints/update_status.js", {id: id, status: 'canceled'}, function(){
       document.getElementById('cancel_btn').style.visibility = 'hidden';
-      document.getElementById('status').innerHTML = status;
+      document.getElementById('status').innerHTML = 'canceled';
    })
    .fail(function(){
      

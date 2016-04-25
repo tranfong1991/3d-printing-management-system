@@ -10,5 +10,5 @@
 = @print.note
 
 - if @print.status == 'pending'
-    %button{ :id => "cancel_btn", :onclick => "cancel_print(#{@print.id}, 'canceled')" } Cancel Print
+    %button{ :id => "cancel_btn", :onclick => "cancel_print(#{@print.id})" } Cancel Print
 
