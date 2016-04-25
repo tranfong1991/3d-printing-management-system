@@ -5,6 +5,10 @@ describe PrintsController, :type => :controller do
     session[:admin_id] = "1"
   end
 
+  before (:each) do
+      session[:print_id] = "1"
+    end
+
   # jeff 1
   # andy 19
   # bob 20
@@ -13,7 +17,15 @@ describe PrintsController, :type => :controller do
     it "renders the new view" do
       get :new
       expect(response).to render_template("new")
-    end    
+    end 
+
+    it "should go to show page" do
+      {:get => print_path}.should route_to(
+        :controller => "prints",
+        :id => 1,
+        :action => "show" # missing required keys: [:id]
+      )
+    end   
   end
 
   describe 'status' do
@@ -26,7 +38,7 @@ describe PrintsController, :type => :controller do
     end
 
     it 'should update status' do
-      post :update_status, :id => "7", format: :js
+      post :update_status, :id => "1", format: :js
     end
 
     it "should go to update status page" do

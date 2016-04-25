@@ -1,0 +1,14 @@
+%h1 Print Information
+
+%h3 File Name
+= @print.filename
+
+%h3 Status 
+#status= @print.status
+
+%h3 Note 
+= @print.note
+
+- if @print.status == 'pending'
+    %button{ :id => "cancel_btn", :onclick => "cancel_print(#{@print.id})" } Cancel Print
+

@@ -1,5 +1,18 @@
-- @students.each do |student|
-    %h1= student.uin
-    %h1= student.name
-    %h1= student.email
-    %h1= student.note
+%h1 Authorized Students
+
+%table.table
+  %thead
+    %tr
+      %th UIN
+      %th First Name
+      %th Last Name
+      %th Email
+      %th Note
+  %tbody
+    - @students.each do |student|
+      %tr
+        %td= student.uin
+        %td= student.first_name
+        %td= student.last_name
+        %td= student.email
+        %td= student.note
