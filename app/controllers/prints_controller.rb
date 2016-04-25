@@ -18,6 +18,12 @@ class PrintsController < ApplicationController
         p.uin = params[:print][:uin]
         p.filename = File.basename(uploaded_file.original_filename, ".*")
         p.extension = File.extname(uploaded_file.original_filename)
+        
+        digest = Digest::SHA1.hexdigest(p.filename)
+        while !digestUnique?(digest)
+          digest = Digest::SHA1.hexdigest(digest)
+        end
+        p.digest = digest
       end
 
       # Get instance
@@ -31,7 +37,7 @@ class PrintsController < ApplicationController
       @print.url = obj.public_url
       @print.save
 
-      flash[:success] = "Uploaded #{@print.filename} for #{@student.name}: #{@print.uin}"
+      flash[:success] = "Uploaded #{@print.filename} for #{@student.first_name} #{@student.last_name}: #{@print.uin}"
     else # If student does NOT exist
       flash[:danger] = 'You are not authorized to print'
     end
@@ -49,7 +55,7 @@ class PrintsController < ApplicationController
   end
   
   def detail
-    @print = Print.find_by(:filename => params[:filename])
+    @print = Print.find_by(:digest => params[:digest])
   end
 
   # POST /prints/update_status
@@ -72,6 +78,14 @@ class PrintsController < ApplicationController
 
   def print_params
     params.require(:print).permit(:uin, :status, :filename, :note)
+  end
+  
+  def digestUnique?(digest)
+    print = Print.find_by(:digest => digest)
+    if print.nil?
+      return true
+    end
+    return false
   end
 
 end
