@@ -17,19 +17,18 @@ class PrintsController < ApplicationController
       @print = Print.new do |p|
         p.uin = params[:print][:uin]
         p.filename = File.basename(uploaded_file.original_filename, ".*")
+        p.extension = File.extname(uploaded_file.original_filename)
       end
 
       # Get instance
       s3 = Aws::S3::Resource.new(region: 'us-west-2')
       # Get bucket
       bucket = s3.bucket('3d-prints')
-      obj = bucket.object("#{@print.uin}_#{datetime}_#{@print.filename}")
+      obj = bucket.object("#{@print.uin}_#{datetime}_#{@print.filename}_#{@print.extension}")
       # Upload file
       obj.put(body: uploaded_file)
 
       @print.url = obj.public_url
-      @print.extension = File.extname(uploaded_file.original_filename)
-
       @print.save
 
       flash[:success] = "Uploaded #{@print.filename} for #{@student.name}: #{@print.uin}"
@@ -46,11 +45,11 @@ class PrintsController < ApplicationController
   end
   
   def show
-    @prints = Print.where(:uin => params[:id]).order('status DESC, created_at DESC')
+    @prints = Print.where(:uin => params[:uin]).order('status DESC, created_at DESC')
   end
   
   def detail
-    @print = Print.where(:filename => params[:id])
+    @print = Print.find_by(:filename => params[:filename])
   end
 
   # POST /prints/update_status
