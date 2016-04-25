@@ -11,7 +11,7 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li class="navbar-left">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="/prints/new">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="navbar-left">
           <a class="nav-link" href="/students">Students</a>
@@ -19,28 +19,24 @@
         <li class="navbar-left">
           <a class="nav-link" href="/prints/queue">Prints</a>
         </li>
+        <% if current_admin %>
         <li class="navbar-right">
-          <a class="navbar-right" href="/signup"> Register</a>
+          <%= link_to "Log out", logout_path, method: "delete" %>
         </li>
-        <li class="navbar-right">
-          <a class="nav-link" href="/login"> Login</a>
+         <li class="navbar-right">
+          <a class="nav-link" href="/login"> <%= current_admin.username %> </a>
         </li>
+        <% else %>
+          <li class="navbar-right">
+            <a class="navbar-right" href="/signup"> Register</a>
+          </li>
+          <li class="navbar-right">
+            <a class="nav-link" href="/login"> Login</a>
+          </li>
       </ul>
+      <% end %>
   </div>
   </nav>
-  <!--<nav class="navbar navbar-masthead navbar-inverse" role="navigation" style="text-align:right">-->
-  <!--   <% if current_admin %>-->
-  <!--  <ul>-->
-  <!--    <li><%= current_admin.username %></li>-->
-  <!--    <li><%= link_to "Log out", logout_path, method: "delete" %></li>-->
-  <!--  </ul>-->
-  <!--<% else %>-->
-  <!--  <ul>-->
-  <!--    <li><%= link_to "Login as Admin", login_path %></a></li>-->
-  <!--    <li><%= link_to "Signup", signup_path %></a></li>-->
-  <!--  </ul>-->
-  <!--<% end %>-->
-  <!--</nav>-->
   <% flash.each do |message_type, message| %>
     <%= content_tag :div, class: "alert alert-#{message_type}" do -%>
     <%= message %>
