@@ -23,6 +23,9 @@ gem 'bcrypt', '~> 3.1.7'
 # AWS gem to access S3 storage
 gem 'aws-sdk', '~> 2'
 
+# Gmail gem to email students
+gem 'gmail', '~> 0.3.1'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

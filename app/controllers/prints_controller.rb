@@ -18,7 +18,7 @@ class PrintsController < ApplicationController
         p.uin = params[:print][:uin]
         p.filename = File.basename(uploaded_file.original_filename, ".*")
         p.extension = File.extname(uploaded_file.original_filename)
-        
+
         digest = Digest::SHA1.hexdigest(p.filename)
         while !digestUnique?(digest)
           digest = Digest::SHA1.hexdigest(digest)
@@ -37,6 +37,7 @@ class PrintsController < ApplicationController
       @print.url = obj.public_url
       @print.save
 
+      send_email(@student, @print)
       flash[:success] = "Uploaded #{@print.filename} for #{@student.first_name} #{@student.last_name}: #{@print.uin}"
     else # If student does NOT exist
       flash[:danger] = 'You are not authorized to print'
@@ -86,6 +87,20 @@ class PrintsController < ApplicationController
       return true
     end
     return false
+  end
+
+  def send_email(student, print)
+    puts request.host_with_port
+    Gmail.connect!('nerfherders431@gmail.com', 'csce431nerf') do |gmail|
+      gmail.deliver do
+        to student.email
+        subject "[EIC] Print Queued."
+        html_part do
+          content_type 'text/html; charset=UTF-8'
+          body "<p>Your print has been successfully uploaded and is now in the queue. You can check the status of your print <em>here</em>: http://localhost:3000/prints/detail/#{print.digest}</p>"
+        end
+      end
+    end
   end
 
 end
