@@ -4,7 +4,7 @@ Feature: Change status of print
   So I can change the status of a print
   I want to go to a print queue page and change the status of prints
 
-Background: admins in database    
+Background: admins, students, and prints in database    
 
     Given the following admins exist: 
 
