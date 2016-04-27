@@ -1,18 +1,19 @@
-%h1 Authorized Students
+%div.container
+  %h1.text-center Authorized Students
 
-%table.table
-  %thead
-    %tr
-      %th UIN
-      %th First Name
-      %th Last Name
-      %th Email
-      %th Note
-  %tbody
-    - @students.each do |student|
+  %table.table.table-striped.table-hover
+    %thead
       %tr
-        %td= student.uin
-        %td= student.first_name
-        %td= student.last_name
-        %td= student.email
-        %td= student.note
+        %th UIN
+        %th First Name
+        %th Last Name
+        %th Email
+        %th Note
+    %tbody
+      - @students.each do |student|
+        %tr
+          %td= student.uin
+          %td= student.first_name
+          %td= student.last_name
+          %td= student.email
+          %td= student.note
