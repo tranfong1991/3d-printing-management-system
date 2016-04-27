@@ -14,9 +14,9 @@ Background: admins, students, and prints in database
 
     Given the following students exist: 
 
-      | uin       | name  | email | note |
+      | uin       | email         | note |
 
-      | 123456789 | hello | world | test |
+      | 012345678 | jeff@tamu.edu | test |
 
     Given the following prints exist: 
 

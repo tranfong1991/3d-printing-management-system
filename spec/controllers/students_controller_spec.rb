@@ -16,7 +16,7 @@ describe StudentsController, :type => :controller do
     end
 
     before(:each) do
-      @student = Student.new :uin => "123456789", :name => "Rev", :email => "rev@tamu.edu"
+      @student = Student.new :uin => "123456789", :email => "rev@tamu.edu"
     end
 
     it "renders the student index template" do
