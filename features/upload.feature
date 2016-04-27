@@ -8,9 +8,9 @@ Background: students in database
 
     Given the following students exist: 
 
-      | uin       | name  | email | note |
+      | uin       | email            | note |
 
-      | 123456789 | hello | world | test |
+      | 123456789 | student@tamu.edu | test |
 
 Scenario: When an authorized UIN is entered, a user can upload
 
