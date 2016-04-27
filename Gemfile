@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
-
+gem 'pg'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -22,6 +22,9 @@ gem 'bcrypt', '~> 3.1.7'
 
 # AWS gem to access S3 storage
 gem 'aws-sdk', '~> 2'
+
+# Gmail gem to email students
+gem 'gmail', '~> 0.3.1'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
