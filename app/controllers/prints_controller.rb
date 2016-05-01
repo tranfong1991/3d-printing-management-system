@@ -97,7 +97,7 @@ class PrintsController < ApplicationController
         subject "[EIC] Print Queued."
         html_part do
           content_type 'text/html; charset=UTF-8'
-          body "<p>Your print has been successfully uploaded and is now in the queue. You can check the status of your print <em>here</em>: http://localhost:3000/prints/detail/#{print.digest}</p>"
+          body "<p>Your print has been successfully uploaded and is now in the queue. You can check the status of your print <em>here</em>: http://ruby-on-rails-tranfong1991.c9users.io:8081/prints/detail/#{print.digest}</p>"
         end
       end
     end
