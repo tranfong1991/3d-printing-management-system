@@ -30,7 +30,7 @@ class PrintsController < ApplicationController
       s3 = Aws::S3::Resource.new(region: 'us-west-2')
       # Get bucket
       bucket = s3.bucket('3d-prints')
-      obj = bucket.object("#{@print.uin}_#{datetime}_#{@print.filename}_#{@print.extension}")
+      obj = bucket.object("#{@print.uin}_#{datetime}_#{@print.filename}#{@print.extension}")
       # Upload file
       obj.put(body: uploaded_file)
 
