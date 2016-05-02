@@ -115,7 +115,7 @@ class PrintsController < ApplicationController
       return nil
     end
 
-    Gmail.connect!('nerfherders431@gmail.com', 'csce431nerf') do |gmail|
+    Gmail.connect!(ENV['GMAIL_USERNAME'], ENV['GMAIL_PASSWORD']) do |gmail|
       gmail.deliver do
         to student.email
         subject sub
