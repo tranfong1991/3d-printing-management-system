@@ -3,6 +3,7 @@
   = form_for @print, :html => {:multipart => true}  do |f|
    
     = f.label :uin, 'UIN'
+    %inline{:style => 'color: red'} *
     %br
     = f.text_field :uin
     %br
@@ -13,10 +14,11 @@
     %br
     = f.label :note, 'Note'
     %br
-    = f.text_field :note
+    = f.text_area :note, :placeholder => 'Insert a custom note about your print here...'
     %br
     %br
     = f.submit 'Upload'
-    %br
-    %br
-    = link_to'Add new student', new_student_path, {:style=>'color:yellow;'} 
+  %br
+  %p{:style => 'color: red'} * required
+  %br
+  = link_to'Add new student', new_student_path, {:style=>'color:yellow;'}
