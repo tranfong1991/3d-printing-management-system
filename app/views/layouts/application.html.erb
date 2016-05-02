@@ -24,12 +24,9 @@
           <%= link_to "Log out", logout_path, method: "delete" %>
         </li>
          <li class="navbar-right">
-          <a class="nav-link" href="/login"> <%= current_admin.username %> </a>
+          <a class="nav-link" href="#"> <%= current_admin.username %> </a>
         </li>
         <% else %>
-          <li class="navbar-right">
-            <a class="navbar-right" href="/signup"> Register</a>
-          </li>
           <li class="navbar-right">
             <a class="nav-link" href="/login"> Login</a>
           </li>
