@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   root "prints#new"
 
+  post 'students/update_note' => 'students#update_note'
   resources :students
 
   get "signup" => "admins#new"

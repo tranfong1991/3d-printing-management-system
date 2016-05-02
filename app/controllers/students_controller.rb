@@ -9,6 +9,24 @@ class StudentsController < ApplicationController
         @student = Student.new
     end
     
+    def update_note
+        id = params[:id]
+        note = params[:note]
+        
+        student = Student.find(id)
+        student.note = note
+        respond_to do |format|
+            if student.save
+                format.js { render :nothing => true }
+            else
+                format.js { render :nothing => false }
+            end
+        end
+    end
+    
+    def update
+    end
+    
     def create
         @student = Student.new(user_params)
         if @student.save

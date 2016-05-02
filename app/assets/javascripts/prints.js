@@ -29,3 +29,11 @@ function cancel_print(id){
      
    });
 }
+
+function update_note(id, note){
+    $.post("/students/update_note.js", {id: id, note: note}, function(){
+      window.alert("Note successfully updated")
+    }).fail(function(){
+        
+    });
+}
