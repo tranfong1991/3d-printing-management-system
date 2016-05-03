@@ -28,7 +28,7 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
-  #puts page.body # super important - much wow
+  p#uts page.body # super important - much wow
 end
 
 Then(/^I should be on the Add New Student page$/) do
@@ -55,6 +55,10 @@ Then(/^I should be on the Prints page$/) do
   visit prints_path
 end
 
+Then(/^I should be on the Students page$/) do
+  visit students_path
+end
+
 Then(/^I should have a warning$/) do
   expect(find('.alert-danger'))
 end
@@ -64,18 +68,20 @@ Then(/^I should have a success$/) do
 end
 
 Then(/^I should have a popup$/) do
-  #page.driver.browser.switch_to.alert.accept
-  driver.switch_to.alert.accept rescue Selenium::WebDriver::Error::NoAlertOpenError
-  #@browser.alert.ok
+  page.driver.browser.switch_to.alert.accept
+  # works
+  #driver.switch_to.alert.accept rescue Selenium::WebDriver::Error::NoAlertOpenError
+
+  # do not use
   #page.driver.browser.switch_to.alert.dismiss
+end
+
+Then(/^I should have another popup$/) do
+  driver.switch_to.alert.accept rescue Selenium::WebDriver::Error::NoAlertOpenError
 end
 
 When(/^I click on "([^"]*)"$/) do |arg1|
   click_button(arg1)
-end
-
-Given(/^I should be on the Students page$/) do
-  visit students_path
 end
 
 Given(/^I click the link "([^"]*)"$/) do |arg1|
@@ -114,6 +120,10 @@ end
 
 Given(/^I fill Email with "([^"]*)"$/) do |arg1|
   fill_in('Email', :with => arg1)
+end
+
+Given(/^I fill 123456789 with "([^"]*)"$/) do |arg1|
+  fill_in('123456789', :with => arg1)
 end
 
 Given(/^I click "([^"]*)"$/) do |arg1|

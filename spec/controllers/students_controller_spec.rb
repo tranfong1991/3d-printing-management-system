@@ -44,6 +44,18 @@ describe StudentsController, :type => :controller do
       session[:admin_id] = "1"
     end
 
+    # it 'should update note' do
+    #   post :update_note, :id => "1", format: :js
+    # end
+
+    # it "should go to update note page" do
+    #   {:get => students_update_note_path}.should route_to(
+    #     :controller => "students",
+    #     :action => "show",
+    #     :id =>"update_note"
+    #   )
+    # end
+
     it "should create new student" do
       Student.stub(:new).and_return(double(Student))
       post :new
