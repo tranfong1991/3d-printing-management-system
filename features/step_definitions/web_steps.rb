@@ -64,7 +64,9 @@ Then(/^I should have a success$/) do
 end
 
 Then(/^I should have a popup$/) do
-  page.driver.browser.switch_to.alert.accept
+  #page.driver.browser.switch_to.alert.accept
+  driver.switch_to.alert.accept rescue Selenium::WebDriver::Error::NoAlertOpenError
+  #@browser.alert.ok
   #page.driver.browser.switch_to.alert.dismiss
 end
 

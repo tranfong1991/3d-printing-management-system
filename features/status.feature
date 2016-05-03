@@ -22,13 +22,52 @@ Background: admins, students, and prints in database
 
       | uin       | status  |       created_at          | filename |
 
+      | 123456789 | pending |   2016-04-11 22:48:27 UTC | test.txt |
+
       | 123456789 | started |   2016-04-11 22:48:27 UTC | test.txt |
 
+      | 123456789 | aborted |   2016-04-11 22:48:27 UTC | test.txt |
+
 @javascript
-Scenario: When an admin is logged in, the admin can change the status
+Scenario: When an admin is logged in, the admin can change the status to started
+
+  Given I am an admin or technician
+  And I am on the Queue page
+  And I click "Start Print"
+  Then I should have a popup
+  And I should be on the Queue page
+
+@javascript
+Scenario: When an admin is logged in, the admin can change the status to complete
 
   Given I am an admin or technician
   And I am on the Queue page
   And I click "Complete"
   Then I should have a popup
+  And I should be on the Queue page
+
+@javascript
+Scenario: When an admin is logged in, the admin can change the status to abort
+
+  Given I am an admin or technician
+  And I am on the Queue page
+  And I click "Abort"
+  Then I should have a popup
+  And I should be on the Queue page
+
+@javascript
+Scenario: When an admin is logged in, the admin can change the status of aborted print to restart
+
+  Given I am an admin or technician
+  And I am on the Queue page
+  And I click "Restart"
+  Then I should have a popup
+  And I should be on the Queue page
+
+@javascript
+Scenario: When an admin is logged in, the admin can change the status of aborted print to cancel
+
+  Given I am an admin or technician
+  And I am on the Queue page
+  And I click "Cancel"
   And I should be on the Queue page
