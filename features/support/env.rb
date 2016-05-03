@@ -29,6 +29,13 @@ require 'cucumber/rails'
 # 2) Set the value below to true. Beware that doing this globally is not
 # recommended as it will mask a lot of errors for you!
 #
+
+
+# Capybara.server_port = 3001
+# Capybara.app_host = "http://localhost:3001"
+
+# ActionController::Base.asset_host = Capybara.app_host
+
 ActionController::Base.allow_rescue = false
 
 # Remove/comment out the lines below if your app doesn't have a database.

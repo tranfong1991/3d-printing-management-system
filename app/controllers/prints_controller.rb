@@ -30,7 +30,7 @@ class PrintsController < ApplicationController
       s3 = Aws::S3::Resource.new(region: 'us-west-2')
       # Get bucket
       bucket = s3.bucket('3d-prints')
-      obj = bucket.object("#{@print.uin}_#{datetime}_#{@print.filename}_#{@print.extension}")
+      obj = bucket.object("#{@print.uin}_#{datetime}_#{@print.filename}#{@print.extension}")
       # Upload file
       obj.put(body: uploaded_file)
 
@@ -65,7 +65,9 @@ class PrintsController < ApplicationController
     new_status = params[:status]
     id = params[:id]
     queued_print = Print.find(id)
+    student = Student.find_by(:uin => queued_print.uin)
     queued_print.status = new_status
+    send_email(student, queued_print)
     respond_to do |format|
       if queued_print.save
         format.js { render :nothing => true }
@@ -90,14 +92,36 @@ class PrintsController < ApplicationController
   end
 
   def send_email(student, print)
-    puts request.host_with_port
-    Gmail.connect!('nerfherders431@gmail.com', 'csce431nerf') do |gmail|
+
+    text = ""
+    sub = ""
+
+    if print.pending?
+      sub = "[EIC] Print Queued."
+      text = "<p>Your print has been successfully uploaded and is now in the queue. You can check the status of your print <em>here</em>: http://ruby-on-rails-tranfong1991.c9users.io:8081/prints/detail/#{print.digest}</p>"
+    elsif print.started?
+      sub = "[EIC] Print Started."
+      text = "<p>Your print has been started! We will email you when it is complete.</p>"
+    elsif print.completed?
+      sub = "[EIC] Print Completed."
+      text = "<p>Your print s complete and ready for pickup! Please come to the EIC to receive your print.</p>"
+    elsif print.aborted?
+      sub = "[EIC] Print Delayed."
+      text = "<p>Your print has been stopped... This will add a delay to your print. Please stand by for more information.</p>"
+    elsif print.canceled?
+      sub = "[EIC] Print Canceled."
+      text = "<p>Your print has been canceled... If you did not cancel it, please come to the EIC to understand why.</p>"
+    else
+      return nil
+    end
+
+    Gmail.connect!(ENV['GMAIL_USERNAME'], ENV['GMAIL_PASSWORD']) do |gmail|
       gmail.deliver do
         to student.email
-        subject "[EIC] Print Queued."
+        subject sub
         html_part do
           content_type 'text/html; charset=UTF-8'
-          body "<p>Your print has been successfully uploaded and is now in the queue. You can check the status of your print <em>here</em>: http://ruby-on-rails-tranfong1991.c9users.io:8081/prints/detail/#{print.digest}</p>"
+          body text
         end
       end
     end

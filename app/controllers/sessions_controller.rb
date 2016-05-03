@@ -7,6 +7,10 @@ class SessionsController < ApplicationController
         if @admin && @admin.authenticate(params[:session][:password])
             session[:admin_id] = @admin.id
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 8251c2f7663bf62a5d40baea9c65cc69c7c6edc7
             flash[:success] = "Successfully signed in"
             redirect_to '/'
 =======
