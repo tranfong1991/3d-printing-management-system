@@ -28,7 +28,7 @@ end
 
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
-  p#uts page.body # super important - much wow
+  #puts page.body # super important - much wow
 end
 
 Then(/^I should be on the Add New Student page$/) do
