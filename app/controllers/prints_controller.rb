@@ -50,11 +50,11 @@ class PrintsController < ApplicationController
   def queue
     @prints = Print.where('status < 3') # Don't get aborted/canceled or rejected prints
   end
-  
+
   def show
     @prints = Print.where(:uin => params[:uin]).order('status DESC, created_at DESC')
   end
-  
+
   def detail
     @print = Print.find_by(:digest => params[:digest])
   end
@@ -82,7 +82,7 @@ class PrintsController < ApplicationController
   def print_params
     params.require(:print).permit(:uin, :status, :filename, :note)
   end
-  
+
   def digestUnique?(digest)
     print = Print.find_by(:digest => digest)
     if print.nil?
@@ -98,7 +98,7 @@ class PrintsController < ApplicationController
 
     if print.pending?
       sub = "[EIC] Print Queued."
-      text = "<p>Your print has been successfully uploaded and is now in the queue. You can check the status of your print <em>here</em>: http://ruby-on-rails-tranfong1991.c9users.io:8081/prints/detail/#{print.digest}</p>"
+      text = "<p>Your print has been successfully uploaded and is now in the queue. You can check the status of your print <em>here</em>: #{ENV['HOST_NAME']}/prints/detail/#{print.digest}</p>"
     elsif print.started?
       sub = "[EIC] Print Started."
       text = "<p>Your print has been started! We will email you when it is complete.</p>"
